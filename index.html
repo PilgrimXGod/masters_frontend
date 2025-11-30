@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGen - Multilingual Material Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>EduGen</h1>
+            <p>Generate multilingual educational materials powered by Gemini 3 Pro</p>
+        </header>
+
+        <main>
+            <div class="input-section card">
+                <div class="form-group">
+                    <label for="uaText">Ukrainian Educational Text</label>
+                    <textarea id="uaText" placeholder="Enter text here..." rows="6"></textarea>
+                </div>
+
+                <div class="controls">
+                    <div class="form-group">
+                        <label for="targetLang">Target Language</label>
+                        <select id="targetLang">
+                            <option value="en">English (en)</option>
+                            <option value="pl">Polish (pl)</option>
+                            <option value="de">German (de)</option>
+                            <option value="crh">Crimean Tatar (crh)</option>
+                            <option value="be">Belarusian (be)</option>
+                            <option value="tk">Turkmen (tk)</option>
+                            <option value="az">Azerbaijani (az)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Difficulty Level</label>
+                        <select id="level">
+                            <option value="basic">Basic</option>
+                            <option value="intermediate">Intermediate</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="btn-primary">
+                    <span class="btn-text">Generate Materials</span>
+                    <span class="loader hidden"></span>
+                </button>
+                <div id="errorMsg" class="error-message hidden"></div>
+            </div>
+
+            <div id="resultsSection" class="results-grid hidden">
+                <div class="card result-card">
+                    <h3>Adapted Text (UA)</h3>
+                    <div id="uaAdapted" class="content-box"></div>
+                </div>
+
+                <div class="card result-card">
+                    <h3>Translated Text</h3>
+                    <div id="translated" class="content-box"></div>
+                </div>
+
+                <div class="card result-card">
+                    <h3>Questions (UA)</h3>
+                    <ul id="questionsUa" class="questions-list"></ul>
+                </div>
+
+                <div class="card result-card">
+                    <h3>Questions (Target)</h3>
+                    <ul id="questionsTarget" class="questions-list"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
