@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsSection.classList.add('hidden');
 
         try {
-            const response = await fetch('http://localhost:8000/generate', {
+            const response = await fetch('https://masters-backend-teef.onrender.com:8000/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,3 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
